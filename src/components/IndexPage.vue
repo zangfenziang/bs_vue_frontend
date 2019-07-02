@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <el-container style="min-height: 100vh;">
-      <div :style="isCollapse ? 'position: fixed' : 'position: fixed; width: 200px;'">
+      <div :style="isCollapse ? 'z-index: 20; position: fixed' : 'z-index: 20; position: fixed; width: 200px;'">
         <el-menu
           style="min-height: 100vh;" 
           default-active="1" 
@@ -33,9 +33,9 @@
           </el-menu-item>
         </el-menu>
       </div>
-      <el-container :style="isCollapse? 'margin-left: 65px;' : 'margin-left: 200px;'">
-        <el-header style="position: fixed; z-index: 10; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: #E4E7ED;">
-          <div>
+      <el-container :style="isCollapse? 'margin-left: 65px;' : 'margin-left: 200px; position:'">
+        <el-header style="position: fixed; left: 0; z-index: 10; width: 100%; display: flex; flex-direction: row; justify-content: space-between; align-items: center; background: #E4E7ED;">
+          <div :style="isCollapse? 'margin-left: 65px;' : 'margin-left: 200px; position:'">
             <i class="el-icon-s-fold" v-if="!isCollapse" @click="isCollapse = true"></i>
             <i class="el-icon-s-unfold" v-if="isCollapse" @click="isCollapse = false"></i>
           </div>
